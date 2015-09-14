@@ -3,12 +3,7 @@ var test = require('ava');
 var isPlainObj = require('is-plain-obj');
 var eslint = require('eslint');
 var tempWrite = require('temp-write');
-var clearRequire = require('clear-require');
 var fixture = '\'use strict\';\nvar x = true;\n\nif (x) {\n  console.log();\n}\n';
-
-function clearRequires() {
-	['./', './esnext', './browser'].map(clearRequire);
-}
 
 function runEslint(str, conf) {
 	var linter = new eslint.CLIEngine({
@@ -20,31 +15,28 @@ function runEslint(str, conf) {
 }
 
 test('main', function (t) {
-	clearRequires();
 	var conf = require('../');
 
-	t.assert(isPlainObj(conf));
-	t.assert(isPlainObj(conf.env));
-	t.assert(isPlainObj(conf.rules));
-	t.assert(runEslint(fixture, conf).length === 0);
+	t.true(isPlainObj(conf));
+	t.true(isPlainObj(conf.env));
+	t.true(isPlainObj(conf.rules));
+	t.is(runEslint(fixture, conf).length, 0);
 
 	t.end();
 });
 
 test('browser', function (t) {
-	clearRequires();
 	var conf = require('../browser');
 
-	t.assert(isPlainObj(conf));
-	t.assert(isPlainObj(conf.env));
-	t.assert(isPlainObj(conf.rules));
-	t.assert(runEslint(fixture, conf).length === 0);
+	t.true(isPlainObj(conf));
+	t.true(isPlainObj(conf.env));
+	t.true(isPlainObj(conf.rules));
+	t.is(runEslint(fixture, conf).length, 0);
 
 	t.end();
 });
 
 test('esnext', function (t) {
-	clearRequires();
 	var conf = require('../esnext');
 
 	t.true(isPlainObj(conf));
@@ -58,8 +50,6 @@ test('esnext', function (t) {
 });
 
 test('esnext es2016', function (t) {
-	clearRequires();
-
 	var conf = require('../esnext');
 
 	t.true(isPlainObj(conf));
