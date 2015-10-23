@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-xo-space",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "ESLint shareable config for XO with 2-space indent",
   "license": "MIT",
   "repository": "sindresorhus/eslint-config-xo-space",
