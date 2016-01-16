@@ -27,7 +27,7 @@ Add some ESLint config to your `package.json`:
 ```json
 {
 	"name": "my-awesome-project",
-	"eslintConfig": {
+	"xo": {
 		"extends": "xo-space"
 	}
 }
