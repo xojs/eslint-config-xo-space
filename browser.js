@@ -1,6 +1,8 @@
 'use strict';
-var deepAssign = require('deep-assign');
-var conf = require('eslint-config-xo/browser');
-conf = deepAssign({}, conf);
-conf.rules.indent = [2, 2, {SwitchCase: 1}];
-module.exports = conf;
+
+module.exports = {
+	extends: 'xo/browser',
+	rules: {
+		indent: [2, 2, {SwitchCase: 1}]
+	}
+};
