@@ -68,4 +68,4 @@ And [`xo-space/browser`](browser.js) if you're in the browser:
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
