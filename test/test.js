@@ -36,12 +36,3 @@ test('esnext', t => {
 	const errors = runEslint('class Foo {}\n', conf);
 	t.is(errors[0].ruleId, 'no-unused-vars');
 });
-
-test('esnext es2016', t => {
-	const conf = require('../esnext');
-	t.true(isPlainObj(conf));
-	t.true(isPlainObj(conf.rules));
-
-	const errors = runEslint('const x = {a: 0};\nasync function z() {\n\treturn Promise.resolve({b: 1, ...x});\n}\n', conf);
-	t.is(errors[0].ruleId, 'no-unused-vars');
-});
