@@ -1,66 +1,66 @@
 {
-  "name": "eslint-config-xo-space",
-  "version": "0.16.0",
-  "description": "ESLint shareable config for XO with 2-space indent",
-  "license": "MIT",
-  "repository": "sindresorhus/eslint-config-xo-space",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "ava"
-  },
-  "files": [
-    "index.js",
-    "esnext.js",
-    "browser.js"
-  ],
-  "keywords": [
-    "❤️",
-    "space",
-    "spaces",
-    "eslintconfig",
-    "xo",
-    "xoxo",
-    "hugs",
-    "kisses",
-    "happy",
-    "happiness",
-    "code",
-    "quality",
-    "style",
-    "lint",
-    "linter",
-    "jscs",
-    "jshint",
-    "jslint",
-    "eslint",
-    "validate",
-    "code style",
-    "standard",
-    "strict",
-    "check",
-    "checker",
-    "verify",
-    "enforce",
-    "hint",
-    "simple"
-  ],
-  "dependencies": {
-    "eslint-config-xo": "^0.18.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "eslint": "^3.7.1",
-    "is-plain-obj": "^1.0.0",
-    "temp-write": "^3.1.0"
-  },
-  "peerDependencies": {
-    "eslint": ">=3.7.0"
-  }
+	"name": "eslint-config-xo-space",
+	"version": "0.16.0",
+	"description": "ESLint shareable config for XO with 2-space indent",
+	"license": "MIT",
+	"repository": "sindresorhus/eslint-config-xo-space",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "ava"
+	},
+	"files": [
+		"index.js",
+		"esnext.js",
+		"browser.js"
+	],
+	"keywords": [
+		"❤️",
+		"space",
+		"spaces",
+		"eslintconfig",
+		"xo",
+		"xoxo",
+		"hugs",
+		"kisses",
+		"happy",
+		"happiness",
+		"code",
+		"quality",
+		"style",
+		"lint",
+		"linter",
+		"jscs",
+		"jshint",
+		"jslint",
+		"eslint",
+		"validate",
+		"code style",
+		"standard",
+		"strict",
+		"check",
+		"checker",
+		"verify",
+		"enforce",
+		"hint",
+		"simple"
+	],
+	"dependencies": {
+		"eslint-config-xo": "^0.18.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"eslint": "^4.9.0",
+		"is-plain-obj": "^1.0.0",
+		"temp-write": "^3.1.0"
+	},
+	"peerDependencies": {
+		"eslint": ">=4.9.0"
+	}
 }
