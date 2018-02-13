@@ -3,7 +3,7 @@
 	"version": "0.17.0",
 	"description": "ESLint shareable config for XO with 2-space indent",
 	"license": "MIT",
-	"repository": "sindresorhus/eslint-config-xo-space",
+	"repository": "xojs/eslint-config-xo-space",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
