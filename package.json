@@ -10,7 +10,7 @@
 		"url": "sindresorhus.com"
 	},
 	"engines": {
-		"node": ">=4"
+		"node": ">=6"
 	},
 	"scripts": {
 		"test": "ava"
@@ -52,15 +52,15 @@
 		"simple"
 	],
 	"dependencies": {
-		"eslint-config-xo": "^0.20.0"
+		"eslint-config-xo": "^0.23.0"
 	},
 	"devDependencies": {
 		"ava": "*",
-		"eslint": "^4.9.0",
+		"eslint": "^5.0.0",
 		"is-plain-obj": "^1.0.0",
 		"temp-write": "^3.1.0"
 	},
 	"peerDependencies": {
-		"eslint": ">=4.9.0"
+		"eslint": "^5.0.0"
 	}
 }
