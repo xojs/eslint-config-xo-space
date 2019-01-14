@@ -4,6 +4,8 @@
 
 This is for advanced users. [You probably want to use XO directly.](https://github.com/xojs/eslint-config-xo#use-the-xo-cli-instead)
 
+**Use the [XO issue tracker](https://github.com/xojs/xo/issues) instead of this one.**
+
 
 ## Install
 
