@@ -52,15 +52,14 @@
 		"simple"
 	],
 	"dependencies": {
-		"eslint-config-xo": "^0.26.0"
+		"eslint-config-xo": "^0.27.2"
 	},
 	"devDependencies": {
-		"ava": "^1.1.0",
-		"eslint": "^5.12.0",
-		"is-plain-obj": "^1.0.0",
-		"temp-write": "^3.1.0"
+		"ava": "^2.4.0",
+		"eslint": "^6.6.0",
+		"is-plain-obj": "^2.0.0"
 	},
 	"peerDependencies": {
-		"eslint": "^5.12.0"
+		"eslint": ">=6.6.0"
 	}
 }
