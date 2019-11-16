@@ -58,8 +58,3 @@ And [`xo-space/browser`](browser.js) if you're in the browser:
 
 - [eslint-config-xo](https://github.com/xojs/eslint-config-xo) - ESLint shareable config for XO
 - [eslint-config-xo-react](https://github.com/xojs/eslint-config-xo-react) - ESLint shareable config for React to be used with the above
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
