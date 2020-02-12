@@ -6,13 +6,11 @@ This is for advanced users. [You probably want to use XO directly.](https://gith
 
 **Use the [XO issue tracker](https://github.com/xojs/xo/issues) instead of this one.**
 
-
 ## Install
 
 ```
 $ npm install --save-dev eslint-config-xo-space
 ```
-
 
 ## Usage
 
@@ -52,7 +50,6 @@ And [`xo-space/browser`](browser.js) if you're in the browser:
 	"extends": "xo-space/browser"
 }
 ```
-
 
 ## Related
 
