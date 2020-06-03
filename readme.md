@@ -1,4 +1,4 @@
-# eslint-config-xo-space [![Build Status](https://travis-ci.org/xojs/eslint-config-xo-space.svg?branch=master)](https://travis-ci.org/xojs/eslint-config-xo-space)
+# eslint-config-xo-space [![Build Status](https://travis-ci.com/xojs/eslint-config-xo-space.svg?branch=master)](https://travis-ci.com/github/xojs/eslint-config-xo-space)
 
 > ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html) for [XO](https://github.com/xojs/xo) with 2-space indent
 
