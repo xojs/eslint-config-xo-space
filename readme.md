@@ -33,17 +33,7 @@ Or to `.eslintrc`:
 }
 ```
 
-Supports parsing ES2015+, but doesn't enforce it by default.
-
-This package also exposes [`xo-space/esnext`](esnext.js) if you want ES2015+ rules:
-
-```json
-{
-	"extends": "xo-space/esnext"
-}
-```
-
-And [`xo-space/browser`](browser.js) if you're in the browser:
+This package also exposes [`xo-space/browser`](browser.js) if you're in the browser:
 
 ```json
 {

@@ -27,12 +27,3 @@ test('browser', t => {
 	t.true(isPlainObj(conf.rules));
 	t.is(runEslint(fixture, '../browser.js').length, 0);
 });
-
-test('esnext', t => {
-	const conf = require('../esnext');
-	t.true(isPlainObj(conf));
-	t.true(isPlainObj(conf.rules));
-
-	const errors = runEslint('class Foo {}\n', '../esnext.js');
-	t.is(errors[0].ruleId, 'no-unused-vars');
-});
