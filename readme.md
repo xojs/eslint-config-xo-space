@@ -8,8 +8,8 @@ This is for advanced users. [You probably want to use XO directly.](https://gith
 
 ## Install
 
-```
-$ npm install --save-dev eslint-config-xo-space
+```sh
+npm install --save-dev eslint-config-xo-space
 ```
 
 ## Usage

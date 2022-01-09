@@ -1,29 +1,38 @@
 import test from 'ava';
 import isPlainObj from 'is-plain-obj';
-import eslint from 'eslint';
-import path from 'path';
+import {ESLint} from 'eslint';
 
-const fixture = `'use strict';\nconst x = true;\n\nif (x) {\n  console.log();\n}\n`;
+const hasRule = (errors, ruleId) => errors.some(error => error.ruleId === ruleId);
 
-function runEslint(str, conf) {
-	const linter = new eslint.CLIEngine({
+const fixture = `"use strict";\nconst x = true;\n\nif (x) {\n  console.log();\n}\n`;
+
+async function runEslint(string, config) {
+	const eslint = new ESLint({
 		useEslintrc: false,
-		configFile: path.join(__dirname, conf)
+		overrideConfig: config,
 	});
 
-	return linter.executeOnText(str).results[0].messages;
+	const [firstResult] = await eslint.lintText(string);
+
+	return firstResult.messages;
 }
 
-test('main', t => {
-	const conf = require('../');
-	t.true(isPlainObj(conf));
-	t.true(isPlainObj(conf.rules));
-	t.is(runEslint(fixture, '../index.js').length, 0);
+test('main', async t => {
+	const config = require('../index.js');
+
+	t.true(isPlainObj(config));
+	t.true(isPlainObj(config.rules));
+
+	const errors = await runEslint(fixture, config);
+	t.true(hasRule(errors, 'quotes'), JSON.stringify(errors));
 });
 
-test('browser', t => {
-	const conf = require('../browser');
-	t.true(isPlainObj(conf));
-	t.true(isPlainObj(conf.rules));
-	t.is(runEslint(fixture, '../browser.js').length, 0);
+test('browser', async t => {
+	const config = require('../browser.js');
+
+	t.true(isPlainObj(config));
+	t.true(isPlainObj(config.rules));
+
+	const errors = await runEslint(fixture, config);
+	t.true(hasRule(errors, 'quotes'), JSON.stringify(errors));
 });
