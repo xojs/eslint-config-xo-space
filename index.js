@@ -1,8 +1,9 @@
-'use strict';
+import eslintConfigXo from 'eslint-config-xo';
 
-module.exports = {
-	extends: 'xo',
+export default {
+	...eslintConfigXo,
 	rules: {
+		...eslintConfigXo.rules,
 		indent: [
 			'error',
 			2,
@@ -10,5 +11,5 @@ module.exports = {
 				SwitchCase: 1
 			}
 		]
-	}
+	},
 };

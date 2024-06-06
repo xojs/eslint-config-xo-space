@@ -1,8 +1,9 @@
-'use strict';
+import eslintConfigXoBrowser from 'eslint-config-xo/browser';
 
-module.exports = {
-	extends: 'xo/browser',
+export default {
+	...eslintConfigXoBrowser,
 	rules: {
+		...eslintConfigXoBrowser.rules,
 		indent: [
 			'error',
 			2,
@@ -10,5 +11,5 @@ module.exports = {
 				SwitchCase: 1
 			}
 		]
-	}
+	},
 };
