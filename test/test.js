@@ -1,14 +1,12 @@
 import test from 'ava';
-import isPlainObj from 'is-plain-obj';
 import {ESLint} from 'eslint';
+import eslintConfigXoSpace from '../index.js';
 
 const hasRule = (errors, ruleId) => errors.some(error => error.ruleId === ruleId);
 
-const fixture = `"use strict";\nconst x = true;\n\nif (x) {\n  console.log();\n}\n`;
-
 async function runEslint(string, config) {
 	const eslint = new ESLint({
-		useEslintrc: false,
+		overrideConfigFile: true,
 		overrideConfig: config,
 	});
 
@@ -18,21 +16,31 @@ async function runEslint(string, config) {
 }
 
 test('main', async t => {
-	const config = require('../index.js');
+	const config = eslintConfigXoSpace();
+	t.true(Array.isArray(config));
 
-	t.true(isPlainObj(config));
-	t.true(isPlainObj(config.rules));
-
-	const errors = await runEslint(fixture, config);
-	t.true(hasRule(errors, 'quotes'), JSON.stringify(errors));
+	const errors = await runEslint('\'use strict\';\nconsole.log("unicorn")\n', config);
+	t.true(hasRule(errors, '@stylistic/quotes'), JSON.stringify(errors));
 });
 
 test('browser', async t => {
-	const config = require('../browser.js');
+	const config = eslintConfigXoSpace({browser: true});
+	t.true(Array.isArray(config));
 
-	t.true(isPlainObj(config));
-	t.true(isPlainObj(config.rules));
+	const errors = await runEslint('\'use strict\';\nprocess.exit();\n', config);
+	t.true(hasRule(errors, 'no-undef'), JSON.stringify(errors));
+});
 
-	const errors = await runEslint(fixture, config);
-	t.true(hasRule(errors, 'quotes'), JSON.stringify(errors));
+test('space', async t => {
+	const fixture = `
+export function foo() {
+\treturn true;
+}
+`.trim();
+
+	for (const config of [eslintConfigXoSpace(), eslintConfigXoSpace({browser: true})]) {
+		// eslint-disable-next-line no-await-in-loop
+		const errors = await runEslint(fixture, config);
+		t.true(hasRule(errors, '@stylistic/indent'), JSON.stringify(errors));
+	}
 });

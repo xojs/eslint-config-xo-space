@@ -14,31 +14,24 @@ npm install --save-dev eslint-config-xo-space
 
 ## Usage
 
-Add some ESLint config to your `package.json`:
+In your `eslint.config.js`:
 
-```json
-{
-	"name": "my-awesome-project",
-	"eslintConfig": {
-		"extends": "xo-space"
-	}
-}
+```js
+import eslintConfigXoSpace from 'eslint-config-xo-space';
+
+export default [
+	...eslintConfigXoSpace(),
+];
 ```
 
-Or to `.eslintrc`:
+If you're in the browser:
 
-```json
-{
-	"extends": "xo-space"
-}
-```
+```js
+import eslintConfigXoSpace from 'eslint-config-xo-space';
 
-This package also exposes [`xo-space/browser`](browser.js) if you're in the browser:
-
-```json
-{
-	"extends": "xo-space/browser"
-}
+export default [
+	...eslintConfigXoSpace({browser: true}),
+];
 ```
 
 ## Related

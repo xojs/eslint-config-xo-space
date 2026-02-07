@@ -1,14 +1,26 @@
-'use strict';
+import eslintConfigXo from 'eslint-config-xo';
+import eslintConfigXoBrowser from 'eslint-config-xo/browser';
 
-module.exports = {
-	extends: 'xo',
-	rules: {
-		indent: [
-			'error',
-			2,
-			{
-				SwitchCase: 1
-			}
-		]
-	}
+const spaceIndentRules = {
+	'@stylistic/indent': [
+		'error',
+		2,
+		{
+			SwitchCase: 1,
+		},
+	],
 };
+
+export default function eslintConfigXoSpace({browser = false} = {}) {
+	const [config] = browser ? eslintConfigXoBrowser : eslintConfigXo;
+
+	return [
+		{
+			...config,
+			rules: {
+				...config.rules,
+				...spaceIndentRules,
+			},
+		},
+	];
+}
