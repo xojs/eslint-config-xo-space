@@ -2,9 +2,8 @@
 
 > ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html) for [XO](https://github.com/xojs/xo) with 2-space indent
 
-This is for advanced users. [You probably want to use XO directly.](https://github.com/xojs/eslint-config-xo#use-the-xo-cli-instead)
-
-**Use the [XO issue tracker](https://github.com/xojs/xo/issues) instead of this one.**
+> [!IMPORTANT]
+> This config has been merged into [`eslint-config-xo`](https://github.com/xojs/eslint-config-xo).
 
 ## Install
 
@@ -33,8 +32,3 @@ export default [
 	...eslintConfigXoSpace({browser: true}),
 ];
 ```
-
-## Related
-
-- [eslint-config-xo](https://github.com/xojs/eslint-config-xo) - ESLint shareable config for XO
-- [eslint-config-xo-react](https://github.com/xojs/eslint-config-xo-react) - ESLint shareable config for React to be used with the above
